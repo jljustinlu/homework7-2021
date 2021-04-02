@@ -4,6 +4,7 @@ var isMuted = false;
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window");
+
 });
 
 document.querySelector("#play").addEventListener("click", function() {
@@ -51,14 +52,14 @@ document.querySelector("#mute").addEventListener("click", function(){
 	if (isMuted == true){
 		video.muted = false;
 		isMuted = false;
-		console.log("Unmute");
+		console.log("Unmuted");
 		document.querySelector("#mute").innerHTML = "Mute";
 	}
 	else{
 		video.muted = true;
 		isMuted = true;
 		console.log("Muted");
-		document.querySelector("#mute").innerHTML = "Muted";
+		document.querySelector("#mute").innerHTML = "Unmute";
 	}
 	
 });
