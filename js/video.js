@@ -47,14 +47,27 @@ document.querySelector("#slider").addEventListener("click", function(){
 });
 
 document.querySelector("#mute").addEventListener("click", function(){
-	console.log("Muted");
-	video.muted = true;
-	document.querySelector("#mute").innerHTML = "Muted";
+	if (video.muted == true){
+		video.muted = false;
+		console.log("Unmute");
+		document.querySelector("#mute").innerHTML = "Mute";
+	}
+	else{
+		video.muted = true;
+		console.log("Muted");
+		document.querySelector("#mute").innerHTML = "Muted";
+	}
+	
 });
 
 document.querySelector("#skip").addEventListener("click", function(){
-	if (video.currentTime < video.duration){
+	if (video.currentTime + 15 <= video.duration){
 		var time = video.currentTime += 15;
+		console.log(time);
+	}
+	else{
+		video.currentTime = 0;
+		var time = video.currentTime;
 		console.log(time);
 	}
 });
