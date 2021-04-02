@@ -1,4 +1,5 @@
 var video = document.getElementById("player1");
+var isMuted = false;
 
 
 window.addEventListener("load", function() {
@@ -47,13 +48,16 @@ document.querySelector("#slider").addEventListener("click", function(){
 });
 
 document.querySelector("#mute").addEventListener("click", function(){
-	if (video.muted == true){
+
+	if (isMuted == true){
 		video.muted = false;
+		isMuted = false;
 		console.log("Unmute");
 		document.querySelector("#mute").innerHTML = "Mute";
 	}
 	else{
 		video.muted = true;
+		isMuted = true;
 		console.log("Muted");
 		document.querySelector("#mute").innerHTML = "Muted";
 	}
